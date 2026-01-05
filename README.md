@@ -82,11 +82,12 @@ Route.get('/posts', async (req) => {
 
 | Package | Purpose |
 | :--- | :--- |
-| **`@bullet-js/core`** | Bootstrapping, Config, and Manifest generation. |
-| **`@bullet-js/http`** | Request/Response, Routing, and Middleware. |
-| **`@bullet-js/orm`** | Kysely-powered database layer and Model system. |
-| **`@bullet-js/view`** | React SSR and Hot Reload logic. |
-| **`@bullet-js/validation`**| Robust data validation system. |
+| **[`@bullet-js/core`](./packages/core)** | Bootstrapping, Config, and Manifest generation. |
+| **[`@bullet-js/http`](./packages/http)** | Request/Response, Routing, and Middleware. |
+| **[`@bullet-js/orm`](./packages/orm)** | Kysely-powered database layer and Model system. |
+| **[`@bullet-js/view`](./packages/view)** | React SSR and Hot Reload logic. |
+| **[`@bullet-js/validation`](./packages/validation)** | Robust data validation system. |
+| **[`@bullet-js/cli`](./packages/cli)** | Command-line tools for scaffolding and generation. |
 
 ---
 
