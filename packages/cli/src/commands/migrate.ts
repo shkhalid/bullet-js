@@ -1,5 +1,5 @@
 import { Command } from 'commander';
-import { Migrator, ConnectionManager } from '@bulletjs/orm';
+import { Migrator, ConnectionManager } from '@bullet-js/orm';
 import { existsSync, readFileSync } from 'fs';
 import { join } from 'path';
 

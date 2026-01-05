@@ -1,11 +1,11 @@
-import { BulletFactory } from '@bulletjs/core';
-import { ConnectionManager } from '@bulletjs/orm';
+import { BulletFactory } from '@bullet-js/core';
+import { ConnectionManager } from '@bullet-js/orm';
 import { LoggerMiddleware } from './middlewares/LoggerMiddleware';
 import '../routes/web'; // Load web routes
 import '../routes/api'; // Load api routes
 
 async function bootstrap() {
-  const { Config } = await import('@bulletjs/core');
+  const { Config } = await import('@bullet-js/core');
   
   // Ensure config is loaded from the correct directory in this monorepo/symlink setup
   await Config.load(`${process.cwd()}/config`);

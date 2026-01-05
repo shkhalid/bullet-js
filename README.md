@@ -8,7 +8,7 @@ BulletJS is a high-performance, full-stack web framework designed for the **Bun*
 - **💎 Laravel-like DX**: Elegant routing, middleware, models, and collections.
 - **⚛️ React SSR**: Hybrid rendering with React components on the server.
 - **⚡ Hot Reload**: Instant reflected changes in the browser during development.
-- **📦 Monorepo Architecture**: Modular packages (`@bulletjs/core`, `@bulletjs/orm`, etc.).
+- **📦 Monorepo Architecture**: Modular packages (`@bullet-js/core`, `@bullet-js/orm`, etc.).
 - **🛠️ Built-in ORM**: Powerful database interaction via Kysely with full TypeScript support.
 - **🛡️ Rate Limiting**: Simple IP-based throttling out of the box.
 
@@ -19,7 +19,7 @@ BulletJS is a high-performance, full-stack web framework designed for the **Bun*
 - **Runtime**: [Bun](https://bun.sh)
 - **Database**: [Kysely](https://kysely.dev) (SQLite, Postgres, MySQL, MSSQL)
 - **UI**: [React](https://reactjs.org) + [TailwindCSS](https://tailwindcss.com) (Optional)
-- **CLI**: `@bulletjs/create-bullet-app`
+- **CLI**: `@bullet-js/create-bullet-app`
 
 ---
 
@@ -42,7 +42,7 @@ bun run dev
 Define routes in `routes/web.ts` or `routes/api.ts`. Use Laravel-style controller binding or closures.
 
 ```typescript
-import { Route, throttle } from '@bulletjs/http';
+import { Route, throttle } from '@bullet-js/http';
 
 Route.get('/', async () => 'Welcome to BulletJS!');
 
@@ -55,7 +55,7 @@ Route.get('/api/data', [DataController, 'index'])
 BulletJS ORM provides a fluent interface for your database.
 
 ```typescript
-import { Model } from '@bulletjs/orm';
+import { Model } from '@bullet-js/orm';
 
 export class Post extends Model {
     protected static tableName = 'posts';
@@ -82,11 +82,11 @@ Route.get('/posts', async (req) => {
 
 | Package | Purpose |
 | :--- | :--- |
-| **`@bulletjs/core`** | Bootstrapping, Config, and Manifest generation. |
-| **`@bulletjs/http`** | Request/Response, Routing, and Middleware. |
-| **`@bulletjs/orm`** | Kysely-powered database layer and Model system. |
-| **`@bulletjs/view`** | React SSR and Hot Reload logic. |
-| **`@bulletjs/validation`**| Robust data validation system. |
+| **`@bullet-js/core`** | Bootstrapping, Config, and Manifest generation. |
+| **`@bullet-js/http`** | Request/Response, Routing, and Middleware. |
+| **`@bullet-js/orm`** | Kysely-powered database layer and Model system. |
+| **`@bullet-js/view`** | React SSR and Hot Reload logic. |
+| **`@bullet-js/validation`**| Robust data validation system. |
 
 ---
 

@@ -10,14 +10,14 @@
       },
     },
     "packages/cli": {
-      "name": "@bulletjs/cli",
-      "version": "0.0.1",
+      "name": "@bullet-js/cli",
+      "version": "1.0.0",
       "bin": {
         "bullet": "./bin/bullet.js",
         "bjs": "./bin/bullet.js",
       },
       "dependencies": {
-        "@bulletjs/orm": "workspace:*",
+        "@bullet-js/orm": "workspace:*",
         "chalk": "^5.0.0",
         "commander": "^11.0.0",
       },
@@ -28,11 +28,11 @@
       },
     },
     "packages/core": {
-      "name": "@bulletjs/core",
-      "version": "0.0.1",
+      "name": "@bullet-js/core",
+      "version": "1.0.0",
       "dependencies": {
-        "@bulletjs/http": "workspace:*",
-        "@bulletjs/orm": "workspace:*",
+        "@bullet-js/http": "workspace:*",
+        "@bullet-js/orm": "workspace:*",
         "reflect-metadata": "^0.2.0",
       },
       "devDependencies": {
@@ -42,8 +42,8 @@
       },
     },
     "packages/create-bullet-app": {
-      "name": "create-bullet-app",
-      "version": "0.0.1",
+      "name": "@bullet-js/create-app",
+      "version": "1.0.0",
       "bin": {
         "create-bullet-app": "dist/index.js",
       },
@@ -59,8 +59,8 @@
       },
     },
     "packages/http": {
-      "name": "@bulletjs/http",
-      "version": "0.0.1",
+      "name": "@bullet-js/http",
+      "version": "1.0.0",
       "dependencies": {
         "reflect-metadata": "^0.2.0",
       },
@@ -70,8 +70,8 @@
       },
     },
     "packages/orm": {
-      "name": "@bulletjs/orm",
-      "version": "0.0.1",
+      "name": "@bullet-js/orm",
+      "version": "1.0.0",
       "dependencies": {
         "mysql2": "^3.16.0",
         "pg": "^8.16.3",
@@ -90,16 +90,16 @@
       },
     },
     "packages/validation": {
-      "name": "@bulletjs/validation",
-      "version": "0.0.1",
+      "name": "@bullet-js/validation",
+      "version": "1.0.0",
       "devDependencies": {
         "bun-types": "latest",
         "typescript": "^5.0.0",
       },
     },
     "packages/view": {
-      "name": "@bulletjs/view",
-      "version": "0.0.1",
+      "name": "@bullet-js/view",
+      "version": "1.0.0",
       "devDependencies": {
         "@types/node": "^25.0.3",
         "@types/react": "^18.2.0",
@@ -116,11 +116,11 @@
       "name": "playground",
       "version": "0.0.1",
       "dependencies": {
-        "@bulletjs/core": "workspace:*",
-        "@bulletjs/http": "workspace:*",
-        "@bulletjs/orm": "workspace:*",
-        "@bulletjs/validation": "workspace:*",
-        "@bulletjs/view": "workspace:*",
+        "@bullet-js/core": "workspace:*",
+        "@bullet-js/http": "workspace:*",
+        "@bullet-js/orm": "workspace:*",
+        "@bullet-js/validation": "workspace:*",
+        "@bullet-js/view": "workspace:*",
         "kysely": "*",
         "react": "^18.2.0",
         "react-dom": "^18.2.0",
@@ -128,7 +128,7 @@
         "rxjs": "^7.0.0",
       },
       "devDependencies": {
-        "@bulletjs/cli": "workspace:*",
+        "@bullet-js/cli": "workspace:*",
         "@types/node": "^25.0.3",
         "@types/react": "^18.2.0",
         "@types/react-dom": "^18.2.0",
@@ -171,17 +171,19 @@
 
     "@azure/msal-node": ["@azure/msal-node@3.8.4", "", { "dependencies": { "@azure/msal-common": "15.13.3", "jsonwebtoken": "^9.0.0", "uuid": "^8.3.0" } }, "sha512-lvuAwsDpPDE/jSuVQOBMpLbXuVuLsPNRwWCyK3/6bPlBk0fGWegqoZ0qjZclMWyQ2JNvIY3vHY7hoFmFmFQcOw=="],
 
-    "@bulletjs/cli": ["@bulletjs/cli@workspace:packages/cli"],
+    "@bullet-js/cli": ["@bullet-js/cli@workspace:packages/cli"],
 
-    "@bulletjs/core": ["@bulletjs/core@workspace:packages/core"],
+    "@bullet-js/core": ["@bullet-js/core@workspace:packages/core"],
 
-    "@bulletjs/http": ["@bulletjs/http@workspace:packages/http"],
+    "@bullet-js/create-app": ["@bullet-js/create-app@workspace:packages/create-bullet-app"],
 
-    "@bulletjs/orm": ["@bulletjs/orm@workspace:packages/orm"],
+    "@bullet-js/http": ["@bullet-js/http@workspace:packages/http"],
 
-    "@bulletjs/validation": ["@bulletjs/validation@workspace:packages/validation"],
+    "@bullet-js/orm": ["@bullet-js/orm@workspace:packages/orm"],
 
-    "@bulletjs/view": ["@bulletjs/view@workspace:packages/view"],
+    "@bullet-js/validation": ["@bullet-js/validation@workspace:packages/validation"],
+
+    "@bullet-js/view": ["@bullet-js/view@workspace:packages/view"],
 
     "@js-joda/core": ["@js-joda/core@5.6.5", "", {}, "sha512-3zwefSMwHpu8iVUW8YYz227sIv6UFqO31p1Bf1ZH/Vom7CmNyUsXjDBlnNzcuhmOL1XfxZ3nvND42kR23XlbcQ=="],
 
@@ -224,8 +226,6 @@
     "chalk": ["chalk@5.6.2", "", {}, "sha512-7NzBL0rN6fMUW+f7A6Io4h40qQlG+xGmtMxfbnH/K7TAtt8JQWVQK+6g0UXKMeVJoyV5EkkNsErQ8pVD3bLHbA=="],
 
     "commander": ["commander@11.1.0", "", {}, "sha512-yPVavfyCcRhmorC7rWlkHn15b4wDVgVmBA7kV4QVBsF7kv/9TKJAbAXVTxvTnwP8HHKjRCJDClKbciiYS7p0DQ=="],
-
-    "create-bullet-app": ["create-bullet-app@workspace:packages/create-bullet-app"],
 
     "csstype": ["csstype@3.2.3", "", {}, "sha512-z1HGKcYy2xA8AGQfwrn0PAy+PB7X/GSj3UVJW9qKyn43xWa+gl5nXmU4qqLMRzWVLFC8KusUX8T/0kCiOYpAIQ=="],
 
@@ -395,9 +395,9 @@
 
     "xtend": ["xtend@4.0.2", "", {}, "sha512-LKYU1iAXJXUgAXn9URjiu+MWhyUXHsvfp7mcuYm9dSUKK0/CjtrUwFAxD82/mCWbtLsGjFIad0wIsod4zrTAEQ=="],
 
-    "@bulletjs/orm/@types/node": ["@types/node@25.0.3", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA=="],
+    "@bullet-js/orm/@types/node": ["@types/node@25.0.3", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA=="],
 
-    "@bulletjs/view/@types/node": ["@types/node@25.0.3", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA=="],
+    "@bullet-js/view/@types/node": ["@types/node@25.0.3", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA=="],
 
     "@types/fs-extra/@types/node": ["@types/node@25.0.3", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA=="],
 
@@ -417,9 +417,9 @@
 
     "tedious/@types/node": ["@types/node@25.0.3", "", { "dependencies": { "undici-types": "~7.16.0" } }, "sha512-W609buLVRVmeW693xKfzHeIV6nJGGz98uCPfeXI1ELMLXVeKYZ9m15fAMSaUPBHYLGFsVRcMmSCksQOrZV9BYA=="],
 
-    "@bulletjs/orm/@types/node/undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
+    "@bullet-js/orm/@types/node/undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
 
-    "@bulletjs/view/@types/node/undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
+    "@bullet-js/view/@types/node/undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
 
     "@types/fs-extra/@types/node/undici-types": ["undici-types@7.16.0", "", {}, "sha512-Zz+aZWSj8LE6zoxD+xrjh4VfkIG8Ya6LvYkZqtUQGJPZjYl53ypCaUwWqo7eI0x66KBGeRo+mlBEkMSeSZ38Nw=="],
 

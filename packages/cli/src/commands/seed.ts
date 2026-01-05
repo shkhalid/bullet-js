@@ -1,7 +1,7 @@
 import { Command } from 'commander';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ConnectionManager } from '@bulletjs/orm';
+import { ConnectionManager } from '@bullet-js/orm';
 
 async function bootstrapDB() {
     // Re-use logic or proper bootstrapper

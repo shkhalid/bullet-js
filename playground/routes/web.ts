@@ -1,5 +1,5 @@
-import { Route, Request, throttle } from '@bulletjs/http';
-import { View } from '@bulletjs/view';
+import { Route, Request, throttle } from '@bullet-js/http';
+import { View } from '@bullet-js/view';
 
 Route.get('/', async (req: Request) => {
     return View.render('Home', {}, req);

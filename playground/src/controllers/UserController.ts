@@ -1,4 +1,4 @@
-import { Request } from '@bulletjs/http';
+import { Request } from '@bullet-js/http';
 
 export class UserController {
   async index(req: Request) {

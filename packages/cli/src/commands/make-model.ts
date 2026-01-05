@@ -7,7 +7,7 @@ export const makeModelCommand = new Command('make:model')
   .argument('<name>', 'The name of the model')
   .option('-m, --migration', 'Create a new migration file for the model')
   .action(async (name, options) => {
-    const template = `import { Model } from '@bulletjs/orm';
+    const template = `import { Model } from '@bullet-js/orm';
 
 export class ${name} extends Model {
   // static tableName = '${name.toLowerCase()}s';

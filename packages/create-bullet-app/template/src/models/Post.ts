@@ -1,4 +1,4 @@
-import { Model } from '@bulletjs/orm';
+import { Model } from '@bullet-js/orm';
 
 export class Post extends Model {
   // static tableName = 'posts';

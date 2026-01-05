@@ -7,11 +7,11 @@
         "bjs": "bullet"
     },
     "dependencies": {
-        "@bulletjs/core": "^0.0.1",
-        "@bulletjs/orm": "^0.0.1",
-        "@bulletjs/http": "^0.0.1",
-        "@bulletjs/view": "^0.0.1",
-        "@bulletjs/validation": "^0.0.1",
+        "@bullet-js/core": "^1.0.0",
+        "@bullet-js/orm": "^1.0.0",
+        "@bullet-js/http": "^1.0.0",
+        "@bullet-js/view": "^1.0.0",
+        "@bullet-js/validation": "^1.0.0",
         "reflect-metadata": "^0.2.0",
         "rxjs": "^7.0.0",
         "kysely": "*",
@@ -19,7 +19,7 @@
         "react-dom": "^18.2.0"
     },
     "devDependencies": {
-        "@bulletjs/cli": "^0.0.1",
+        "@bullet-js/cli": "^1.0.0",
         "@types/node": "^25.0.3",
         "@types/react": "^18.2.0",
         "@types/react-dom": "^18.2.0",

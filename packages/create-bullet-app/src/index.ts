@@ -73,7 +73,7 @@ resources/js/pages.ts
     console.log(`  cd ${response.projectName}`);
     console.log('  bun install');
     console.log('  bun run dev');
-    console.log('\nNote: Make sure to publish @bulletjs/* packages to npm first, or use local workspace links for development.');
+    console.log('\nNote: Make sure to publish @bullet-js/* packages to npm first, or use local workspace links for development.');
     
   } catch (e) {
     console.error(red('✖ Error creating project:'), e);

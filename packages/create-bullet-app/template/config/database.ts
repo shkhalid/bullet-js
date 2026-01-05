@@ -1,4 +1,4 @@
-import { Env } from '@bulletjs/core';
+import { Env } from '@bullet-js/core';
 
 export default {
   default: Env.get('DB_CONNECTION', 'sqlite'),

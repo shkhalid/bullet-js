@@ -1,4 +1,4 @@
-import { ConnectionManager, Model } from '@bulletjs/orm';
+import { ConnectionManager, Model } from '@bullet-js/orm';
 
 // 1. Initialize DB
 const db = ConnectionManager.connect({

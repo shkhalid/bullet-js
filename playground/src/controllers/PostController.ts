@@ -1,4 +1,4 @@
-import { Request } from '@bulletjs/http';
+import { Request } from '@bullet-js/http';
 import { Post as PostModel } from '../models/Post';
 
 export class PostController {

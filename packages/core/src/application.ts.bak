@@ -1,4 +1,4 @@
-import { Kernel } from '@bulletjs/http';
+import { Kernel } from '@bullet-js/http';
 
 export class Application {
   private kernel: Kernel;
@@ -28,15 +28,15 @@ export class Application {
     // Setup Database Connection if config exists
     const dbConfig = Config.get('database');
     if (dbConfig) {
-        // In a real app, @bulletjs/orm is a dependency of the app, not necessarily core.
+        // In a real app, @bullet-js/orm is a dependency of the app, not necessarily core.
         // However, we want core to bootstrap it. 
         // We try to import it from the project root if possible, or standard resolution.
         try {
-            const { ConnectionManager } = await import('@bulletjs/orm');
+            const { ConnectionManager } = await import('@bullet-js/orm');
             ConnectionManager.setConfig(dbConfig);
             ConnectionManager.connect();
         } catch (e) {
-            console.error('Failed to load @bulletjs/orm', e);
+            console.error('Failed to load @bullet-js/orm', e);
         }
     } else {
         // Fallback for current playground setup (manual connection)
@@ -77,7 +77,7 @@ export class Application {
             return new Response(SERVER_ID);
         }
 
-        return this.kernel.handle(new (require('@bulletjs/http').Request)(req));
+        return this.kernel.handle(new (require('@bullet-js/http').Request)(req));
       },
     });
   }

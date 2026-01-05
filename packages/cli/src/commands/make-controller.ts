@@ -9,7 +9,7 @@ export const makeControllerCommand = new Command('make:controller')
     // Ensure "Controller" suffix
     const className = name.endsWith('Controller') ? name : `${name}Controller`;
     
-    const template = `import { Request } from '@bulletjs/http';
+    const template = `import { Request } from '@bullet-js/http';
 
 export class ${className} {
   async index(req: Request) {

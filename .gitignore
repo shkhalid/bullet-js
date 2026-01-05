@@ -33,3 +33,4 @@ packages/*/node_modules
 playground/dist
 playground/node_modules
 playground/storage/*.sqlite
+.npmrc

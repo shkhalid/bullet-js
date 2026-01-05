@@ -1,5 +1,5 @@
 {
-    "name": "@bulletjs/view",
+    "name": "@bullet-js/view",
     "version": "1.0.0",
     "main": "dist/index.js",
     "browser": "dist/browser.js",

@@ -25,7 +25,7 @@ export class ViewFactory {
     // OPTION 1: The user should wrap their components in providers.
     // OPTION 2: We mock it? No, Context relies on reference equality.
     
-    // CRITICAL: The ViewFactory inside @bulletjs/view doesn't know about ../js/router.
+    // CRITICAL: The ViewFactory inside @bullet-js/view doesn't know about ../js/router.
     // However, the `Component` loaded via `import(viewPath)` IS the user code.
     // If THAT component uses `Link`, it expects context.
     

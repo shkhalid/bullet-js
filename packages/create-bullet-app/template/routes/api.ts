@@ -1,5 +1,5 @@
-import { Route, Request } from '@bulletjs/http';
-import { validate } from '@bulletjs/validation';
+import { Route, Request } from '@bullet-js/http';
+import { validate } from '@bullet-js/validation';
 
 // Example: User registration with validation
 Route.post('/api/register', async (req: Request) => {

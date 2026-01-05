@@ -1,4 +1,4 @@
-import { Kernel } from '@bulletjs/http';
+import { Kernel } from '@bullet-js/http';
 import * as path from 'path';
 
 export class Application {
@@ -32,11 +32,11 @@ export class Application {
     if (dbConfig) {
         try {
             // @ts-ignore
-            const { ConnectionManager } = await import('@bulletjs/orm');
+            const { ConnectionManager } = await import('@bullet-js/orm');
             ConnectionManager.setConfig(dbConfig);
             ConnectionManager.connect();
         } catch (e) {
-            // console.error('Failed to load @bulletjs/orm', e); 
+            // console.error('Failed to load @bullet-js/orm', e); 
         }
     }
 
@@ -102,7 +102,7 @@ export class Application {
             return new Response(SERVER_ID);
         }
 
-        const bulletReq = new (require('@bulletjs/http').Request)(req);
+        const bulletReq = new (require('@bullet-js/http').Request)(req);
         bulletReq.setIp(server.requestIP(req));
         
         const response = await this.kernel.handle(bulletReq);
@@ -110,11 +110,11 @@ export class Application {
         // Handle Error Pages (404 / 500)
         if ((response.status === 404 || response.status === 500) && req.headers.get('Accept')?.includes('text/html')) {
             try {
-                // Resolve @bulletjs/view from the project's context, not the core package context
+                // Resolve @bullet-js/view from the project's context, not the core package context
                 // @ts-ignore
                 const { createRequire } = await import('module');
                 const projectRequire = createRequire(path.join(process.cwd(), 'package.json'));
-                const { View } = projectRequire('@bulletjs/view');
+                const { View } = projectRequire('@bullet-js/view');
                 
                 const viewName = response.status === 404 ? 'Errors/404' : 'Errors/500';
                 const viewResponse = await View.render(viewName);

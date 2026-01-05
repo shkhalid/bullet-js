@@ -1,4 +1,4 @@
-# @bulletjs/http
+# @bullet-js/http
 
 The HTTP foundation for BulletJS. Handles routing, middleware, and request/response pipelines.
 
@@ -12,7 +12,7 @@ The HTTP foundation for BulletJS. Handles routing, middleware, and request/respo
 ## Installation
 
 ```bash
-bun add @bulletjs/http
+bun add @bullet-js/http
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ bun add @bulletjs/http
 ### Simple Routing
 
 ```typescript
-import { Route } from '@bulletjs/http';
+import { Route } from '@bullet-js/http';
 
 Route.get('/', async (req) => {
     return { message: 'Hello World' };
@@ -30,7 +30,7 @@ Route.get('/', async (req) => {
 ### Middleware & Throttling
 
 ```typescript
-import { Route, throttle } from '@bulletjs/http';
+import { Route, throttle } from '@bullet-js/http';
 
 Route.get('/heavy-process', async () => 'Processing...')
      .middleware(throttle(10, 1)); // 10 requests per minute

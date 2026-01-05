@@ -1,4 +1,4 @@
-# @bulletjs/orm
+# @bullet-js/orm
 
 The official BulletJS ORM. A high-performance, developer-friendly database layer powered by [Kysely](https://kysely.dev).
 
@@ -13,7 +13,7 @@ The official BulletJS ORM. A high-performance, developer-friendly database layer
 ## Installation
 
 ```bash
-bun add @bulletjs/orm kysely
+bun add @bullet-js/orm kysely
 ```
 
 ## Basic Usage
@@ -21,7 +21,7 @@ bun add @bulletjs/orm kysely
 ### Define a Model
 
 ```typescript
-import { Model } from '@bulletjs/orm';
+import { Model } from '@bullet-js/orm';
 
 export class User extends Model {
     protected static tableName = 'users';
