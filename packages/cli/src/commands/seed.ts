@@ -1,14 +1,23 @@
 import { Command } from 'commander';
 import * as fs from 'fs';
 import * as path from 'path';
-import { ConnectionManager } from '@bullet-js/orm';
+import { createRequire } from 'module';
 
 async function bootstrapDB() {
-    // Re-use logic or proper bootstrapper
-    ConnectionManager.connect({
-        database: process.env.DB_DATABASE || 'database.sqlite',
-        debug: true
-    });
+    try {
+        // Try to load @bullet-js/orm from the user's project to ensure we share the same singleton
+        const projectRequire = createRequire(path.join(process.cwd(), 'package.json'));
+        const { ConnectionManager } = projectRequire('@bullet-js/orm');
+
+        ConnectionManager.connect({
+            database: process.env.DB_DATABASE || 'database/database.sqlite',
+            debug: true
+        });
+    } catch (e) {
+        // Fallback or error if not found
+        console.error('Could not load @bullet-js/orm from project. Ensure it is installed.');
+        throw e;
+    }
 }
 
 export const seedCommand = new Command('db:seed')

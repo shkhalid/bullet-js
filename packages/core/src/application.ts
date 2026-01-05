@@ -24,7 +24,7 @@ export class Application {
     try {
         await Config.load(configPath);
     } catch (e) {
-        // Config might not exist
+        console.error('Failed to load configuration:', e);
     }
     
     // Setup Database Connection
@@ -36,7 +36,7 @@ export class Application {
             ConnectionManager.setConfig(dbConfig);
             ConnectionManager.connect();
         } catch (e) {
-            // console.error('Failed to load @bullet-js/orm', e); 
+            console.error('Failed to load or connect to @bullet-js/orm', e); 
         }
     }
 

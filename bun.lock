@@ -11,13 +11,13 @@
     },
     "packages/cli": {
       "name": "@bullet-js/cli",
-      "version": "1.0.0",
+      "version": "1.0.2",
       "bin": {
         "bullet": "./bin/bullet.js",
         "bjs": "./bin/bullet.js",
       },
       "dependencies": {
-        "@bullet-js/orm": "workspace:*",
+        "@bullet-js/orm": "^1.0.0",
         "chalk": "^5.0.0",
         "commander": "^11.0.0",
       },
@@ -31,8 +31,8 @@
       "name": "@bullet-js/core",
       "version": "1.0.0",
       "dependencies": {
-        "@bullet-js/http": "workspace:*",
-        "@bullet-js/orm": "workspace:*",
+        "@bullet-js/http": "^1.0.0",
+        "@bullet-js/orm": "^1.0.0",
         "reflect-metadata": "^0.2.0",
       },
       "devDependencies": {
@@ -43,7 +43,7 @@
     },
     "packages/create-bullet-app": {
       "name": "@bullet-js/create-app",
-      "version": "1.0.0",
+      "version": "1.0.1",
       "bin": {
         "create-bullet-app": "dist/index.js",
       },

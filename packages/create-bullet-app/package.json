@@ -1,6 +1,6 @@
 {
     "name": "@bullet-js/create-app",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "bin": {
         "create-bullet-app": "dist/index.js"
     },

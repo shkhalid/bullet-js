@@ -12,17 +12,17 @@
         "@bullet-js/http": "workspace:*",
         "@bullet-js/view": "workspace:*",
         "@bullet-js/validation": "workspace:*",
-        "reflect-metadata": "^0.2.0",
-        "rxjs": "^7.0.0",
-        "kysely": "*",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0"
+        "reflect-metadata": "^0.2.2",
+        "rxjs": "^7.8.2",
+        "kysely": "^0.28.9",
+        "react": "19.2.0",
+        "react-dom": "19.2.0"
     },
     "devDependencies": {
         "@bullet-js/cli": "workspace:*",
         "@types/node": "^25.0.3",
-        "@types/react": "^18.2.0",
-        "@types/react-dom": "^18.2.0",
+        "@types/react": "^19.2.0",
+        "@types/react-dom": "^19.2.0",
         "bun-types": "latest"
     }
 }

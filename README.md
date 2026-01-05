@@ -28,7 +28,7 @@ BulletJS is a high-performance, full-stack web framework designed for the **Bun*
 The easiest way to start is using the CLI:
 
 ```bash
-bun x create-bullet-app my-app
+npm init @bullet-js/app my-app
 cd my-app
 bun install
 bun run dev
