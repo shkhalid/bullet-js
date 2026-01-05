@@ -1,0 +1,21 @@
+{
+    "name": "@bulletjs/cli",
+    "version": "0.0.1",
+    "bin": {
+        "bullet": "./bin/bullet.js",
+        "bjs": "./bin/bullet.js"
+    },
+    "scripts": {
+        "build": "tsc"
+    },
+    "dependencies": {
+        "commander": "^11.0.0",
+        "chalk": "^5.0.0",
+        "@bulletjs/orm": "workspace:*"
+    },
+    "devDependencies": {
+        "typescript": "^5.0.0",
+        "bun-types": "latest",
+        "@types/node": "^20.0.0"
+    }
+}

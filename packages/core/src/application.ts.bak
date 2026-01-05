@@ -1,0 +1,88 @@
+import { Kernel } from '@bulletjs/http';
+
+export class Application {
+  private kernel: Kernel;
+
+  constructor() {
+    this.kernel = new Kernel();
+  }
+
+  use(middleware: any) {
+    this.kernel.use(middleware);
+    return this;
+  }
+
+  async start(port: number = 3000) {
+    const SERVER_ID = Math.random().toString(36).substring(7);
+    console.log(`BulletJS Application started on http://localhost:${port} (ID: ${SERVER_ID})`);
+    
+    // Load Config
+    // We assume config is at ./config relative to cwd
+    const { Config } = await import('./config');
+    // Check if config dir exists
+    const configPath = `${process.cwd()}/config`;
+    if (await Bun.file(configPath).exists() || await Bun.file(configPath).size > 0 || true) { // naive check, glob handles empty
+        await Config.load(configPath);
+    }
+    
+    // Setup Database Connection if config exists
+    const dbConfig = Config.get('database');
+    if (dbConfig) {
+        // In a real app, @bulletjs/orm is a dependency of the app, not necessarily core.
+        // However, we want core to bootstrap it. 
+        // We try to import it from the project root if possible, or standard resolution.
+        try {
+            const { ConnectionManager } = await import('@bulletjs/orm');
+            ConnectionManager.setConfig(dbConfig);
+            ConnectionManager.connect();
+        } catch (e) {
+            console.error('Failed to load @bulletjs/orm', e);
+        }
+    } else {
+        // Fallback for current playground setup (manual connection)
+        // or print warning
+    }
+
+    // Auto-generate pages manifest on start
+    const { generatePagesManifest } = await import('./manifest');
+    await generatePagesManifest(
+        './resources/views',
+        './resources/js'
+    );
+    
+    // @ts-ignore
+    Bun.serve({
+      port,
+      fetch: async (req: Request) => {
+        const url = new URL(req.url);
+
+        // Handle client-side bundle serving
+        if (url.pathname === '/_bullet/client.js') {
+            const entry = './resources/js/entry.tsx';
+            
+            const result = await Bun.build({
+                entrypoints: [entry],
+                target: 'browser',
+            });
+            
+            if (result.success) {
+                return new Response(result.outputs[0]);
+            } else {
+                return new Response('Build failed: ' + result.logs.join('\n'), { status: 500 });
+            }
+        }
+
+        // Hot Reload Ping
+        if (url.pathname === '/_bullet/ping') {
+            return new Response(SERVER_ID);
+        }
+
+        return this.kernel.handle(new (require('@bulletjs/http').Request)(req));
+      },
+    });
+  }
+}
+
+export const BulletFactory = {
+  create: () => new Application(),
+};
