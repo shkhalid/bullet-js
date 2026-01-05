@@ -16,7 +16,7 @@ async function bootstrapDB() {
     // BETTER: Use standard convention. .env file in root.
     
     ConnectionManager.connect({
-        database: process.env.DB_DATABASE || 'database.sqlite',
+        database: process.env.DB_DATABASE || 'database/database.sqlite',
         debug: true
     });
 }
