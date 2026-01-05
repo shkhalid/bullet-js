@@ -1,6 +1,11 @@
 {
     "name": "@bullet-js/cli",
-    "version": "1.0.3",
+    "version": "1.0.5",
+    "files": [
+        "dist",
+        "bin",
+        "README.md"
+    ],
     "bin": {
         "bullet": "./bin/bullet.js",
         "bjs": "./bin/bullet.js"

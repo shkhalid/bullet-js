@@ -43,8 +43,17 @@ class BunSqliteDriver implements Driver {
     this.config = config;
   }
 
+
   async init(): Promise<void> {
-    this.db = new Database(this.config.database);
+    const fs = await import('fs');
+    const path = await import('path');
+    
+    const dir = path.dirname(this.config.database);
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir, { recursive: true });
+    }
+
+    this.db = new Database(this.config.database, { create: true });
   }
 
   async acquireConnection(): Promise<DatabaseConnection> {
